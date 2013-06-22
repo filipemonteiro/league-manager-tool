@@ -1,0 +1,21 @@
+06-22 20:33:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "'' (TEAM: ID BIGINT DEFAULT (NEXT VALUE FOR PUBLIC.SYSTEM_SEQUENCE_D62BE627_F0DC_4057_B9A2_F3E61A0DD901) NOT NULL NULL_TO_DEFAULT SEQUENCE PUBLIC.SYSTEM_SEQUENCE_D62BE627_F0DC_4057_B9A2_F3E61A0DD901)"; SQL statement:
+INSERT INTO "PUBLIC"."TEAM"("ID","VERSION","IMAGE","NAME")VALUES(?,?,?,?) -- (?1, ?2, ?3, ?4) [22018-164]
+06-22 20:33:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "'' (TEAM: ID BIGINT DEFAULT (NEXT VALUE FOR PUBLIC.SYSTEM_SEQUENCE_D62BE627_F0DC_4057_B9A2_F3E61A0DD901) NOT NULL NULL_TO_DEFAULT SEQUENCE PUBLIC.SYSTEM_SEQUENCE_D62BE627_F0DC_4057_B9A2_F3E61A0DD901)"; SQL statement:
+INSERT INTO "PUBLIC"."TEAM"("ID","VERSION","IMAGE","NAME")VALUES(?,?,?,?) -- (?1, ?2, ?3, ?4) [22018-164]
+06-22 20:35:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DESC[*] TEAM "; expected "DELETE, DROP, DECLARE, DEALLOCATE, {"; SQL statement:
+desc team [42001-164]
+06-22 20:35:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DESC[*] * TEAM "; expected "DELETE, DROP, DECLARE, DEALLOCATE, {"; SQL statement:
+desc * team [42001-164]
+06-22 20:36:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DESCRIBE[*] TEAM "; expected "DELETE, DROP, DECLARE, DEALLOCATE, {"; SQL statement:
+DESCRIBE team [42001-164]
+06-22 20:37:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DESC[*] TEAM"; expected "DELETE, DROP, DECLARE, DEALLOCATE, {"; SQL statement:
+DESC TEAM [42001-164]
+06-22 20:37:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DESC[*] * TEAM"; expected "DELETE, DROP, DECLARE, DEALLOCATE, {"; SQL statement:
+DESC * TEAM [42001-164]
