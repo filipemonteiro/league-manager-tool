@@ -6,6 +6,7 @@ class Player {
 	String email
 	
     static constraints = {
-		name blank: false
+		name (blank: false, unique: true)
+		email (blank: false)
     }
 }
