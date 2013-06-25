@@ -3,10 +3,10 @@ package leaguemanager
 class Team {
 	
 	String name
-	byte[] image
+	String imagePath
 
     static constraints = {
 		name (blank:false, unique: true)
-		image (nullable: true)
+		imagePath (nullable: true)
     }
 }

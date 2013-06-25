@@ -10,11 +10,11 @@
 	<g:textField name="name" required="" value="${teamInstance?.name}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: teamInstance, field: 'image', 'error')} ">
-	<label for="image">
-		<g:message code="team.image.label" default="Image" />
+<div class="fieldcontain ${hasErrors(bean: teamInstance, field: 'imagePath', 'error')} ">
+	<label for="imagePath">
+		<g:message code="team.imagePath.label" default="Image Path" />
 		
 	</label>
-	<input type="file" id="image" name="image" />
+	<g:textField name="imagePath" value="${teamInstance?.imagePath}"/>
 </div>
 
