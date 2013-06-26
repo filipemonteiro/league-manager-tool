@@ -9,7 +9,7 @@ class Championship {
 
     static constraints = {
 		name (blank:false, unique: true)
-		hasMany()
+		participants()
 		startDate (nullable: true)
 		dueDate (nullable: true)
     }

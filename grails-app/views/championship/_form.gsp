@@ -10,22 +10,6 @@
 	<g:textField name="name" required="" value="${championshipInstance?.name}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: championshipInstance, field: 'startDate', 'error')} ">
-	<label for="startDate">
-		<g:message code="championship.startDate.label" default="Start Date" />
-		
-	</label>
-	<g:datePicker name="startDate" precision="day"  value="${championshipInstance?.startDate}" default="none" noSelection="['': '']" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: championshipInstance, field: 'dueDate', 'error')} ">
-	<label for="dueDate">
-		<g:message code="championship.dueDate.label" default="Due Date" />
-		
-	</label>
-	<g:datePicker name="dueDate" precision="day"  value="${championshipInstance?.dueDate}" default="none" noSelection="['': '']" />
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: championshipInstance, field: 'participants', 'error')} ">
 	<label for="participants">
 		<g:message code="championship.participants.label" default="Participants" />
@@ -41,5 +25,21 @@
 </li>
 </ul>
 
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: championshipInstance, field: 'startDate', 'error')} ">
+	<label for="startDate">
+		<g:message code="championship.startDate.label" default="Start Date" />
+		
+	</label>
+	<g:datePicker name="startDate" precision="day"  value="${championshipInstance?.startDate}" default="none" noSelection="['': '']" />
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: championshipInstance, field: 'dueDate', 'error')} ">
+	<label for="dueDate">
+		<g:message code="championship.dueDate.label" default="Due Date" />
+		
+	</label>
+	<g:datePicker name="dueDate" precision="day"  value="${championshipInstance?.dueDate}" default="none" noSelection="['': '']" />
 </div>
 

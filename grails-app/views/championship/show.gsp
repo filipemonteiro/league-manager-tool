@@ -32,6 +32,17 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${championshipInstance?.participants}">
+				<li class="fieldcontain">
+					<span id="participants-label" class="property-label"><g:message code="championship.participants.label" default="Participants" /></span>
+					
+						<g:each in="${championshipInstance.participants}" var="p">
+						<span class="property-value" aria-labelledby="participants-label"><g:link controller="participant" action="show" id="${p.id}">${p?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${championshipInstance?.startDate}">
 				<li class="fieldcontain">
 					<span id="startDate-label" class="property-label"><g:message code="championship.startDate.label" default="Start Date" /></span>
@@ -46,17 +57,6 @@
 					<span id="dueDate-label" class="property-label"><g:message code="championship.dueDate.label" default="Due Date" /></span>
 					
 						<span class="property-value" aria-labelledby="dueDate-label"><g:formatDate date="${championshipInstance?.dueDate}" /></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${championshipInstance?.participants}">
-				<li class="fieldcontain">
-					<span id="participants-label" class="property-label"><g:message code="championship.participants.label" default="Participants" /></span>
-					
-						<g:each in="${championshipInstance.participants}" var="p">
-						<span class="property-value" aria-labelledby="participants-label"><g:link controller="participant" action="show" id="${p.id}">${p?.encodeAsHTML()}</g:link></span>
-						</g:each>
 					
 				</li>
 				</g:if>
