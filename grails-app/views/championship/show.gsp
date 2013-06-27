@@ -66,6 +66,7 @@
 				<fieldset class="buttons">
 					<g:hiddenField name="id" value="${championshipInstance?.id}" />
 					<g:link class="edit" action="edit" id="${championshipInstance?.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
+					<g:link class="edit" action="startChampionship" id="${championshipInstance?.id}">Iniciar Campeonato</g:link>
 					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
 				</fieldset>
 			</g:form>

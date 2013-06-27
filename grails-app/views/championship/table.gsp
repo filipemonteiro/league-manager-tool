@@ -5,7 +5,7 @@
 	<head>
 		<meta name="layout" content="main"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<g:set var="entityName" value="${message(code: 'participant.label', default: 'Participant')}" />
+		<g:set var="entityName" value="${message(code: 'championship.label', default: 'Championship')}" />
 		<title>League Table</title>
 		<r:require modules="bootstrap"/>
 	</head>
@@ -29,23 +29,25 @@
 				<table class="table table-hover table-condensed table-striped">
 					<thead>
 						<tr>
-						
-							<g:sortableColumn property="position" title="#" />
 							
-							<g:sortableColumn property="team" title="Time" />
+							<th>Pos</th>
 							
-							<g:sortableColumn property="points" title="Pontos" />
+							<th>Time</th>
 							
-							<g:sortableColumn property="played" title="J" />
+							<th>Player</th>
 							
-							<g:sortableColumn property="won" title="V" />
+							<th>P</th>
 							
-							<g:sortableColumn property="drawn" title="E" />
+							<th>J</th>
 							
-							<g:sortableColumn property="lost" title="D" />
+							<th>V</th>
 							
-							<g:sortableColumn property="goalDifference" title="SD" />
-						
+							<th>E</th>
+							
+							<th>D</th>
+							
+							<th>SD</th>
+							
 						</tr>
 					</thead>
 					<tbody>
@@ -56,7 +58,11 @@
 							
 								<td>
 									<g:img dir="images/team_uploads" file="${participantInstance.team.imagePath}"/>
-									<g:link action="show" id="${participantInstance.id}">${fieldValue(bean: participantInstance, field: "team.name")}</g:link>
+									<g:link controller="Team" action="show" id="${participantInstance.id}">${fieldValue(bean: participantInstance, field: "team.name")}</g:link>
+								</td>
+								
+								<td>
+									<g:link controller="Participant" action="show" id="${participantInstance.id}">${fieldValue(bean: participantInstance, field: "player.name")}</g:link>
 								</td>
 								
 								<td>${participantInstance.points}</td>

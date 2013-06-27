@@ -108,14 +108,50 @@ class ChampionshipController {
 			return
 		}
 		
-		def participants = championshipInstance.participants.sort { a, b ->
-			if (a.points == b.points) {
-				return a.goalDifference <=> b.goalDifference
-			}
-			
-			return a.points <=> b.goalDifference
-		}
+		LeagueTableService table = new LeagueTableService()
+		def participants = table.mountTable(championshipInstance)
 		
 		[participantList: participants]
+	}
+	
+	def startChampionship(Long id){
+		def championshipInstance = Championship.get(id)
+		if (!championshipInstance) {
+			flash.message = message(code: 'default.not.found.message', args: [message(code: 'championship.label', default: 'Championship'), id])
+			redirect(action: "list")
+			return
+		}
+		
+		createGames(championshipInstance)
+		
+		flash.message = message(code: 'default.updated.message', args: [message(code: 'championship.label', default: 'Championship'), championshipInstance.id])
+		redirect(action: "show", id: championshipInstance.id)
+
+	}
+	
+	def gameAlreadyExists (Participant home, Participant away, Championship championship) {
+		for (Game game : Game.findByChampionship(championship) ) {
+			if (game.home.equals(home) && game.away.equals(away) || game.home.equals(away) && game.away.equals(home)){
+				return true
+			}
+		}
+		return false
+	}
+	
+	def createGames (Championship championship) {
+		
+		for (Participant home : championship.participants) {
+			
+			for (Participant away : championship.participants) {
+				if ( !home.equals(away) && !gameAlreadyExists(home, away, championship) ) {
+					Game game = new Game()
+					game.home = home
+					game.away = away
+					game.championship = championship
+					game.save()
+				}
+			}
+		}
+		
 	}
 }
