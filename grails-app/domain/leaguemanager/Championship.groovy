@@ -14,4 +14,8 @@ class Championship {
 		dueDate (nullable: true)
     }
 	
+	@Override
+	public String toString() {
+		return name
+	}
 }

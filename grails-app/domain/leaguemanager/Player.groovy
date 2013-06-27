@@ -9,4 +9,9 @@ class Player {
 		name (blank: false, unique: true)
 		email (blank: false)
     }
+	
+	@Override
+	public String toString() {
+		return name
+	}
 }

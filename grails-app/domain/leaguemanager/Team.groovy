@@ -9,4 +9,9 @@ class Team {
 		name (blank:false, unique: true)
 		imagePath (nullable: true)
     }
+	
+	@Override
+	public String toString() {
+		return name
+	}
 }

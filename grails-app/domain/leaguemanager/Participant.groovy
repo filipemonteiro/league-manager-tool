@@ -11,4 +11,10 @@ class Participant {
 	
     static constraints = {
     }
+	
+	@Override
+	public String toString() {
+		return player.name + "/" + team.name
+	}
+	
 }

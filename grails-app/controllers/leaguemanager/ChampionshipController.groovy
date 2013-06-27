@@ -99,4 +99,23 @@ class ChampionshipController {
             redirect(action: "show", id: id)
         }
     }
+	
+	def table(Long id){
+		def championshipInstance = Championship.get(id)
+		if (!championshipInstance) {
+			flash.message = message(code: 'default.not.found.message', args: [message(code: 'championship.label', default: 'Championship'), id])
+			redirect(action: "list")
+			return
+		}
+		
+		def participants = championshipInstance.participants.sort { a, b ->
+			if (a.points == b.points) {
+				return a.goalDifference <=> b.goalDifference
+			}
+			
+			return a.points <=> b.goalDifference
+		}
+		
+		[participantList: participants]
+	}
 }
