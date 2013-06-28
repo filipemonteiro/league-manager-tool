@@ -37,6 +37,11 @@ class ChampionshipController {
             redirect(action: "list")
             return
         }
+		
+		if (championshipInstance.lock) {
+			redirect(action: "table", id: championshipInstance.id)
+			return
+		}
 
         [championshipInstance: championshipInstance]
     }
@@ -117,7 +122,7 @@ class ChampionshipController {
 		LeagueTableService tableService = new LeagueTableService()
 		def participants = tableService.mountTable(championshipInstance)
 		
-		[participantList: participants]
+		[participantList: participants, championshipInstance: championshipInstance]
 	}
 	
 	def startChampionship(Long id){

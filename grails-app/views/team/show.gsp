@@ -26,8 +26,6 @@
 					</div>
 				</g:if>
 				
-				
-					
 				<g:if test="${teamInstance?.name}">
 					<p>
 						<span id="name-label" class="property-label"><g:message code="team.name.label" default="Name" /></span>

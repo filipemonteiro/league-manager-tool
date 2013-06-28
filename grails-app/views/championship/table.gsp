@@ -86,6 +86,11 @@
 				<g:link class="btn btn-small btn-primary" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link>
 				<g:link class="btn btn-small btn-primary" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
 				
+				<g:if test="${!championshipInstance.lock}">
+					<g:link class="btn btn-small btn-primary" action="startChampionship" id="${championshipInstance?.id}"><g:message code="default.start.championship.label" args="[entityName]" /></g:link>
+				</g:if>
+				
+				
 			</div>
 		</div>
 		
