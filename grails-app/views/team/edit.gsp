@@ -15,7 +15,7 @@
 		<div class="container">
 			<div class="row">
 			
-				<legend>Editar - Time</legend>
+				<legend><g:message code="default.edit.label" args="[entityName]" /></legend>
 				
 				<g:if test="${flash.message}">
 					<div class="alert">
@@ -25,13 +25,14 @@
 				</g:if>
 				
 				<g:hasErrors bean="${teamInstance}">
-				<ul class="errors">
-					<g:eachError bean="${teamInstance}" var="error">
-					<li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
-					</g:eachError>
-				</ul>
+					<div class="alert">
+						<g:eachError bean="${teamInstance}" var="error">
+							<button type="button" class="close" data-dismiss="alert">&times;</button>
+							<g:message error="${error}"/>
+						</g:eachError>
+					</div>
 				</g:hasErrors>
-			
+				
 				<g:form method="post" >
 					<g:hiddenField name="id" value="${teamInstance?.id}" />
 					<g:hiddenField name="version" value="${teamInstance?.version}" />

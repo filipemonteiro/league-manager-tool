@@ -19,13 +19,16 @@
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
+			
 			<g:hasErrors bean="${participantInstance}">
-			<ul class="errors" role="alert">
-				<g:eachError bean="${participantInstance}" var="error">
-				<li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
-				</g:eachError>
-			</ul>
+				<div class="alert">
+					<g:eachError bean="${participantInstance}" var="error">
+						<button type="button" class="close" data-dismiss="alert">&times;</button>
+						<g:message error="${error}"/>
+					</g:eachError>
+				</div>
 			</g:hasErrors>
+			
 			<g:form action="save" >
 				<fieldset class="form">
 					<g:render template="form"/>

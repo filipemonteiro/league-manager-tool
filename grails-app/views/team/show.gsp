@@ -17,7 +17,7 @@
 			<div class="row">
 			
 			
-				<legend>Exibir - Time</legend>
+				<legend><g:message code="default.show.label" args="[entityName]" /></legend>
 			
 				<g:if test="${flash.message}">
 					<div class="alert">

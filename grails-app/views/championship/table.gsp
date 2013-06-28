@@ -17,7 +17,7 @@
 			<div class="row">
 			
 			
-				<legend>Classificação</legend>
+				<legend><g:message code="default.table.label" /></legend>
 			
 				<g:if test="${flash.message}">
 					<div class="alert">

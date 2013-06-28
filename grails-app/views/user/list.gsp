@@ -17,7 +17,7 @@
 		<div class="container">
 			<div class="row">
 		
-				<legend>Listagem - Admin</legend>
+				<legend><g:message code="default.list.label" args="[entityName]" /></legend>
 					
 				<g:if test="${flash.message}">
 					<div class="alert">

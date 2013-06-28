@@ -15,15 +15,16 @@
 		<g:message code="championship.participants.label" default="Participants" />
 		
 	</label>
-	
-<ul class="one-to-many">
+
 <g:each in="${championshipInstance?.participants?}" var="p">
-    <li><g:link controller="participant" action="show" id="${p.id}">${p?.encodeAsHTML()}</g:link></li>
+    <p class="muted"><g:link controller="participant" action="show" id="${p.id}">${p?.encodeAsHTML()}</g:link></p>
 </g:each>
-<li class="add">
-<g:link controller="participant" action="create" params="['championship.id': championshipInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'participant.label', default: 'Participant')])}</g:link>
-</li>
-</ul>
+	
+<g:link class="btn btn-small" controller="participant" action="create" params="['championship.id': championshipInstance?.id]">
+	${message(code: 'default.add.label', args: [message(code: 'participant.label', default: 'Participant')])}
+</g:link>
+
+<p></p>
 
 </div>
 

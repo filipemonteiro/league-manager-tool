@@ -17,7 +17,7 @@
 		<div class="container">
 			<div class="row">
 		
-				<legend>Listagem - Time</legend>
+				<legend><g:message code="default.list.label" args="[entityName]" /></legend>
 				
 				<g:if test="${flash.message}">
 					<div class="alert">
@@ -39,7 +39,9 @@
 							<tr>
 							
 								<td>
-									<g:img dir="images/team_uploads" file="${teamInstance.imagePath}"/>
+									<g:if test="${teamInstance.imagePath}">
+										<g:img dir="images/team_uploads" file="${teamInstance.imagePath}"/>
+									</g:if>
 									<g:link action="show" id="${teamInstance.id}">${fieldValue(bean: teamInstance, field: "name")}</g:link>
 								</td>
 							
