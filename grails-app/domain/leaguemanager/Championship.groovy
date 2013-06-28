@@ -6,6 +6,7 @@ class Championship {
 	static hasMany = [participants:Participant]
 	Date startDate
 	Date dueDate
+	boolean lock
 
     static constraints = {
 		name (blank:false, unique: true)

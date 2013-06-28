@@ -10,6 +10,7 @@ class Participant {
 	int goalDifference
 	
     static constraints = {
+		championship()
     }
 	
 	@Override

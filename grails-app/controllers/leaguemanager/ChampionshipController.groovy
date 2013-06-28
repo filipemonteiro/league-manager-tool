@@ -48,6 +48,12 @@ class ChampionshipController {
             redirect(action: "list")
             return
         }
+		
+		if (championshipInstance.lock) {
+			flash.message = message(code: 'default.not.edited.message', args: [message(code: 'championship.label', default: 'Championship'), id])
+			redirect(action: "list")
+			return
+		}
 
         [championshipInstance: championshipInstance]
     }
@@ -108,8 +114,8 @@ class ChampionshipController {
 			return
 		}
 		
-		LeagueTableService table = new LeagueTableService()
-		def participants = table.mountTable(championshipInstance)
+		LeagueTableService tableService = new LeagueTableService()
+		def participants = tableService.mountTable(championshipInstance)
 		
 		[participantList: participants]
 	}
@@ -122,36 +128,14 @@ class ChampionshipController {
 			return
 		}
 		
-		createGames(championshipInstance)
+		GameService gameService = new GameService()
+		gameService.createGames(championshipInstance)
+		
+		championshipInstance.lock = true
+		championshipInstance.save(flush: true)
 		
 		flash.message = message(code: 'default.updated.message', args: [message(code: 'championship.label', default: 'Championship'), championshipInstance.id])
-		redirect(action: "show", id: championshipInstance.id)
+		redirect(action: "table", id: championshipInstance.id)
 
-	}
-	
-	def gameAlreadyExists (Participant home, Participant away, Championship championship) {
-		for (Game game : Game.findByChampionship(championship) ) {
-			if (game.home.equals(home) && game.away.equals(away) || game.home.equals(away) && game.away.equals(home)){
-				return true
-			}
-		}
-		return false
-	}
-	
-	def createGames (Championship championship) {
-		
-		for (Participant home : championship.participants) {
-			
-			for (Participant away : championship.participants) {
-				if ( !home.equals(away) && !gameAlreadyExists(home, away, championship) ) {
-					Game game = new Game()
-					game.home = home
-					game.away = away
-					game.championship = championship
-					game.save()
-				}
-			}
-		}
-		
 	}
 }

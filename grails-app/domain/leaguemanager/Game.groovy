@@ -7,6 +7,7 @@ class Game {
 	int goalsAway
 
     static constraints = {
+		championship()
 		goalsHome(nullable: true)
 		goalsAway(nullable: true)
     }
