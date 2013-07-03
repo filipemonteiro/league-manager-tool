@@ -67,13 +67,15 @@
 					<fieldset>
 						<g:hiddenField name="id" value="${championshipInstance?.id}" />
 						<g:link class="btn" action="edit" id="${championshipInstance?.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-						<g:link class="btn" action="startChampionship" id="${championshipInstance?.id}">Iniciar Campeonato</g:link>
+						<g:link class="btn" action="startChampionship" id="${championshipInstance?.id}" onclick="return confirm('${message(code: 'default.button.start.championship.confirm.message', default: 'Are you sure?')}');">Iniciar Campeonato</g:link>
 						<g:actionSubmit class="btn" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
 					</fieldset>
 				</g:form>
 				
-				<g:link class="btn btn-small btn-primary" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link>
-				<g:link class="btn btn-small btn-primary" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
+				<div class="form-actions">
+					<g:link class="btn btn-small btn-primary" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link>
+					<g:link class="btn btn-small btn-primary" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
+				</div>
 		
 			</div>
 		</div>

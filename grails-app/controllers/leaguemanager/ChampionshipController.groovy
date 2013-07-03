@@ -111,7 +111,7 @@ class ChampionshipController {
         }
     }
 	
-	def table(Long id){
+	def table(Long id) {
 		def championshipInstance = Championship.get(id)
 		if (!championshipInstance) {
 			flash.message = message(code: 'default.not.found.message', args: [message(code: 'championship.label', default: 'Championship'), id])
@@ -125,7 +125,7 @@ class ChampionshipController {
 		[participantList: participants, championshipInstance: championshipInstance]
 	}
 	
-	def startChampionship(Long id){
+	def startChampionship(Long id) {
 		def championshipInstance = Championship.get(id)
 		if (!championshipInstance) {
 			flash.message = message(code: 'default.not.found.message', args: [message(code: 'championship.label', default: 'Championship'), id])
@@ -142,5 +142,16 @@ class ChampionshipController {
 		flash.message = message(code: 'default.updated.message', args: [message(code: 'championship.label', default: 'Championship'), championshipInstance.id])
 		redirect(action: "table", id: championshipInstance.id)
 
+	}
+	
+	def editResults(Long id) {
+		def championshipInstance = Championship.get(id)
+		if (!championshipInstance) {
+			flash.message = message(code: 'default.not.found.message', args: [message(code: 'championship.label', default: 'Championship'), id])
+			redirect(action: "list")
+			return
+		}
+		
+		[gameList: championshipInstance.games, championshipInstance: championshipInstance]
 	}
 }

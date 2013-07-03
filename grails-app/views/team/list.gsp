@@ -54,7 +54,9 @@
 					<g:paginate total="${teamInstanceTotal}" />
 				</div>
 				
-				<g:link class="btn btn-small btn-primary" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
+				<div class="form-actions">
+					<g:link class="btn btn-small btn-primary" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
+				</div>
 			
 			</div>
 		</div>

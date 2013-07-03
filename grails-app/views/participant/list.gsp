@@ -30,17 +30,11 @@
 					<thead>
 						<tr>
 						
-							<th><g:message code="participant.championship.label" default="Championship" /></th>
-						
-							<g:sortableColumn property="drawn" title="${message(code: 'participant.drawn.label', default: 'Drawn')}" />
-						
-							<g:sortableColumn property="goalDifference" title="${message(code: 'participant.goalDifference.label', default: 'Goal Difference')}" />
-						
-							<g:sortableColumn property="lost" title="${message(code: 'participant.lost.label', default: 'Lost')}" />
-						
+							<th><g:message code="participant.team.label" default="Team" /></th>
+							
 							<th><g:message code="participant.player.label" default="Player" /></th>
-						
-							<g:sortableColumn property="points" title="${message(code: 'participant.points.label', default: 'Points')}" />
+							
+							<th><g:message code="participant.championship.label" default="Championship" /></th>
 						
 						</tr>
 					</thead>
@@ -48,17 +42,16 @@
 					<g:each in="${participantInstanceList}" status="i" var="participantInstance">
 						<tr>
 						
-							<td><g:link action="show" id="${participantInstance.id}">${fieldValue(bean: participantInstance, field: "championship")}</g:link></td>
-						
-							<td>${fieldValue(bean: participantInstance, field: "drawn")}</td>
-						
-							<td>${fieldValue(bean: participantInstance, field: "goalDifference")}</td>
-						
-							<td>${fieldValue(bean: participantInstance, field: "lost")}</td>
-						
+							<td>
+								<g:if test="${participantInstance.team.imagePath}">
+									<g:img dir="images/team_uploads" file="${participantInstance.team.imagePath}"/>
+								</g:if>
+								${fieldValue(bean: participantInstance, field: "team")}
+							</td>
+							
 							<td>${fieldValue(bean: participantInstance, field: "player")}</td>
 						
-							<td>${fieldValue(bean: participantInstance, field: "points")}</td>
+							<td><g:link action="show" id="${participantInstance.id}">${fieldValue(bean: participantInstance, field: "championship")}</g:link></td>
 						
 						</tr>
 					</g:each>
@@ -69,7 +62,9 @@
 					<g:paginate total="${participantInstanceTotal}" />
 				</div>
 				
-				<g:link class="btn btn-small btn-primary" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
+				<div class="form-actions">
+					<g:link class="btn btn-small btn-primary" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
+				</div>
 		
 			</div>
 		</div>

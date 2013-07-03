@@ -21,6 +21,13 @@ class ParticipantController {
 
     def save() {
         def participantInstance = new Participant(params)
+		
+		if (participantInstance.championship.lock) {
+			flash.message = message(code: 'default.not.created.message', args: [message(code: 'participant.label', default: 'Participant')])
+			redirect(action: "list")
+			return
+		}
+		
         if (!participantInstance.save(flush: true)) {
             render(view: "create", model: [participantInstance: participantInstance])
             return
@@ -48,6 +55,12 @@ class ParticipantController {
             redirect(action: "list")
             return
         }
+		
+		if (participantInstance.championship.lock) {
+			flash.message = message(code: 'default.not.edited.message', args: [message(code: 'participant.label', default: 'Participant'), id])
+			redirect(action: "list")
+			return
+		}
 
         [participantInstance: participantInstance]
     }

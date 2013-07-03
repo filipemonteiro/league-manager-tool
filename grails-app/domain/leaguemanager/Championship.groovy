@@ -3,7 +3,7 @@ package leaguemanager
 class Championship {
 	
 	String name
-	static hasMany = [participants:Participant]
+	static hasMany = [participants: Participant, games: Game]
 	Date startDate
 	Date dueDate
 	boolean lock
