@@ -10,12 +10,12 @@
 	</head>
 
 	<body>
-		<g:render template="/common/header" />
+		<g:render template="/common/header-min" model="['title':'Campeonato']" />
 		
 		<div class="container">
 			<div class="row">
 	
-				<legend><g:message code="default.create.label" args="[entityName]" /></legend>
+				
 		
 				<g:if test="${flash.message}">
 					<div class="alert">
@@ -43,12 +43,12 @@
 				</g:form>
 				
 				<div class="form-actions">
-					<g:link class="btn btn-small btn-primary" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link>
+					<g:link class="btn btn-small btn-primary" action="list">Voltar</g:link>
 				</div>
-		
+		<g:render template="/common/footer" />
 			</div>
 		</div>
 		
-		<g:render template="/common/footer" />
+		
 	</body>
 </html>

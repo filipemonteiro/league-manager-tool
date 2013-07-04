@@ -12,13 +12,11 @@
 
 	<body>
 	
-		<g:render template="/common/header" />
+		<g:render template="/common/header-min" model="['title':'Campeonato']" />
 		
 		<div class="container">
 			<div class="row">
 			
-				<legend><g:message code="default.list.label" args="[entityName]" /></legend>
-				
 				<g:if test="${flash.message}">
 					<div class="alert">
 						<button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -30,11 +28,11 @@
 					<thead>
 						<tr>
 						
-							<g:sortableColumn property="name" title="${message(code: 'championship.name.label', default: 'Name')}" />
+							<g:sortableColumn property="name" title="${message(code: 'championship.name.label', default: 'Título')}" />
 							
-							<g:sortableColumn property="startDate" title="${message(code: 'championship.startDate.label', default: 'Start Date')}" />
+							<g:sortableColumn property="startDate" title="${message(code: 'championship.startDate.label', default: 'Data de Início')}" />
 						
-							<g:sortableColumn property="dueDate" title="${message(code: 'championship.dueDate.label', default: 'Due Date')}" />
+							<g:sortableColumn property="dueDate" title="${message(code: 'championship.dueDate.label', default: 'Data de Término')}" />
 						
 						</tr>
 					</thead>
@@ -43,10 +41,9 @@
 							<tr>
 							
 								<td><g:link action="show" id="${championshipInstance.id}">${fieldValue(bean: championshipInstance, field: "name")}</g:link></td>
+								<td><g:formatDate format="dd/MM/yyyy" date="${championshipInstance.startDate}" /></td>
 							
-								<td><g:formatDate date="${championshipInstance.startDate}" /></td>
-							
-								<td><g:formatDate date="${championshipInstance.dueDate}" /></td>
+								<td><g:formatDate format="dd/MM/yyyy" date="${championshipInstance.dueDate}" /></td>
 							
 							</tr>
 						</g:each>
@@ -58,13 +55,13 @@
 				</div>
 				
 				<div class="form-actions">
-					<g:link class="btn btn-small btn-primary" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
+					<g:link class="btn btn-small btn-primary" action="create">Criar Campeonato</g:link>
 				</div>
-		
+		<g:render template="/common/footer" />
 			</div>
 		</div>
 		
-		<g:render template="/common/footer" />
+		
 		
 	</body>
 </html>

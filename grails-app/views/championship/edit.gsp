@@ -10,12 +10,11 @@
 	</head>
 	
 	<body>
-		<g:render template="/common/header" />
+		<g:render template="/common/header-min" model="['title':'Editando']" />
 		
 		<div class="container">
 			<div class="row">
 			
-				<legend><g:message code="default.edit.label" args="[entityName]" /></legend>
 				
 				<g:if test="${flash.message}">
 					<div class="alert">
@@ -46,8 +45,8 @@
 				</g:form>
 				
 				<div class="form-actions">
-					<g:link class="btn btn-small btn-primary" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link>
-					<g:link class="btn btn-small btn-primary" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
+					<g:link class="btn btn-small btn-primary" action="list">Voltar</g:link>
+					
 				</div>
 				
 			</div>

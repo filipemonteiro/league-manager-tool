@@ -27,7 +27,7 @@ class ChampionshipController {
         }
 
         flash.message = message(code: 'default.created.message', args: [message(code: 'championship.label', default: 'Championship'), championshipInstance.id])
-        redirect(action: "show", id: championshipInstance.id)
+        redirect(action: "list", id: championshipInstance.id)
     }
 
     def show(Long id) {
