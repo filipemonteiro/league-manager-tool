@@ -12,12 +12,12 @@
 	
 	<body>
 	
-		<g:render template="/common/header" />
+		<g:render template="/common/header-min" model="['title':'Times']" />
 		
 		<div class="container">
 			<div class="row">
 		
-				<legend><g:message code="default.list.label" args="[entityName]" /></legend>
+				
 				
 				<g:if test="${flash.message}">
 					<div class="alert">
@@ -27,13 +27,6 @@
 				</g:if>
 				
 				<table class="table table-hover">
-					<thead>
-						<tr>
-						
-							<g:sortableColumn property="name" title="${message(code: 'team.name.label', default: 'Name')}" />
-						
-						</tr>
-					</thead>
 					<tbody>
 						<g:each in="${teamInstanceList}" status="i" var="teamInstance">
 							<tr>
@@ -53,11 +46,6 @@
 				<div class="pagination">
 					<g:paginate total="${teamInstanceTotal}" />
 				</div>
-				
-				<div class="form-actions">
-					<g:link class="btn btn-small btn-primary" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
-				</div>
-			
 			</div>
 		</div>
 		
