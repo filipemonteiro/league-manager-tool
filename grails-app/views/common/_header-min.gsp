@@ -6,7 +6,7 @@
     </div>
 </div>
 
-<div class="hero-unit" style="height:20px">
+<div class="hero-unit" style="height:10px">
   <h1 style="line-height:0">${title}</h1>
   
 </div>

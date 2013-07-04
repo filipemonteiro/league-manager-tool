@@ -35,7 +35,10 @@
 									<g:if test="${teamInstance.imagePath}">
 										<g:img dir="images/team_uploads" file="${teamInstance.imagePath}"/>
 									</g:if>
-									<g:link action="show" id="${teamInstance.id}">${fieldValue(bean: teamInstance, field: "name")}</g:link>
+									<g:else>
+										- 
+									</g:else>
+									${fieldValue(bean: teamInstance, field: "name")}
 								</td>
 							
 							</tr>

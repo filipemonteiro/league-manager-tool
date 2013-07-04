@@ -5,6 +5,7 @@
       </div>
     </div>
 </div>
+</div>
 
 <div class="hero-unit">
   <h1>League Manager</h1>
