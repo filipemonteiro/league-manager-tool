@@ -4,18 +4,17 @@
 	<head>
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'player.label', default: 'Player')}" />
+		<r:require modules="bootstrap"/>
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<a href="#create-player" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-			</ul>
-		</div>
+
+	<g:render template="/common/header-min" model="['title':'Inscrição']" />
+	<div class="container">
+			<div class="row">
+		
 		<div id="create-player" class="content scaffold-create" role="main">
-			<h1><g:message code="default.create.label" args="[entityName]" /></h1>
+
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -37,6 +36,13 @@
 					<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
 				</fieldset>
 			</g:form>
+			<div class="form-actions">
+					<g:link class="btn btn-small btn-primary" action="list">Voltar</g:link>
+				</div>
+				<g:render template="/common/footer" />
 		</div>
+		</div>
+		</div>
+
 	</body>
 </html>

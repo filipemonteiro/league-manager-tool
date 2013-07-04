@@ -27,7 +27,7 @@ class PlayerController {
         }
 
         flash.message = message(code: 'default.created.message', args: [message(code: 'player.label', default: 'Player'), playerInstance.id])
-        redirect(action: "show", id: playerInstance.id)
+        redirect(action: "list", id: playerInstance.id)
     }
 
     def show(Long id) {

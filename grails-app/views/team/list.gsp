@@ -49,10 +49,11 @@
 				<div class="pagination">
 					<g:paginate total="${teamInstanceTotal}" />
 				</div>
+						<g:render template="/common/footer" />
 			</div>
 		</div>
 		
-		<g:render template="/common/footer" />
+
 		
 	</body>
 </html>

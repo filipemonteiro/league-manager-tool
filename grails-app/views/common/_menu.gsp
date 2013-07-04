@@ -8,16 +8,13 @@
 					<g:link controller="championship">Campeonato</g:link>
 				</li>
 				<li class="">
-					<g:link controller="participant">Participante</g:link>
+					<g:link controller="participant">Participar</g:link>
 				</li>
 				<li class="">
-					<g:link controller="player">Player</g:link>
+					<g:link controller="player">Inscrição</g:link>
 				</li>
 				<li class="">
 					<g:link controller="team">Time</g:link>
-				</li>
-				<li class="">
-					<g:link controller="user">Admin</g:link>
 				</li>
 			</ul>
         </div>

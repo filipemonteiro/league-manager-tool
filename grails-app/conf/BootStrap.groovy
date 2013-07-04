@@ -1,4 +1,6 @@
 import leaguemanager.Team
+import leaguemanager.Player
+
 class BootStrap {
 
     def init = { servletContext ->
@@ -42,6 +44,8 @@ class BootStrap {
     	new Team(name:"Werder Bremen",imagePath:"werder_bremen-p.png").save(failOnError: true);
     	new Team(name:"Wolfsburg",imagePath:"Wolfsburg-p.png").save(failOnError: true);
     	new Team(name:"Zenit",imagePath:"zenit-p.png").save(failOnError: true);
+
+        new Player(name:"Jacobino Costa", email:"jacobino@gmail.com", equipe:"Cetip").save(failOnError: true);
     }
     def destroy = {
     }

@@ -12,13 +12,11 @@
 
 	<body>
 	
-		<g:render template="/common/header" />
+		<g:render template="/common/header-min" model="['title':'Inscritos']" />
 		
 		<div class="container">
 			<div class="row">
-			
-				<legend><g:message code="default.list.label" args="[entityName]" /></legend>
-				
+							
 				<g:if test="${flash.message}">
 					<div class="alert">
 						<button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -30,9 +28,10 @@
 					<thead>
 						<tr>
 						
-							<g:sortableColumn property="name" title="${message(code: 'player.name.label', default: 'Name')}" />
+							<g:sortableColumn property="name" title="${message(code: 'player.name.label', default: 'Nome')}" />
 						
 							<g:sortableColumn property="email" title="${message(code: 'player.email.label', default: 'Email')}" />
+							<g:sortableColumn property="equipe" title="${message(code: 'player.equipe.label', default: 'Equipe')}" />
 						
 						</tr>
 					</thead>
@@ -43,6 +42,7 @@
 							<td><g:link action="show" id="${playerInstance.id}">${fieldValue(bean: playerInstance, field: "name")}</g:link></td>
 						
 							<td>${fieldValue(bean: playerInstance, field: "email")}</td>
+							<td>${fieldValue(bean: playerInstance, field: "equipe")}</td>
 						
 						</tr>
 					</g:each>
@@ -54,13 +54,13 @@
 				</div>
 				
 				<div class="form-actions">
-					<g:link class="btn btn-small btn-primary" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
+					<g:link class="btn btn-small btn-primary" action="create">Adicionar</g:link>
 				</div>
-				
+				<g:render template="/common/footer" />		
 			</div>
 		</div>
 		
-		<g:render template="/common/footer" />
+		
 		
 	</body>
 </html>
