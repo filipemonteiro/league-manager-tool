@@ -1,6 +1,7 @@
 target/
 target-eclipse/
-devDb
+devDb*
 .project
 .classpath
 .settings/
+*.log

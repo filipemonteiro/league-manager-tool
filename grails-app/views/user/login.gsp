@@ -28,12 +28,12 @@
             </g:hasErrors>
             <g:form action="authenticate" >
                 <fieldset class="form">
-                    <div class="fieldcontain ${hasErrors(bean: userInstance, field: 'userName', 'error')} ">
-                        <label for="userName">
-                            <g:message code="user.userName.label" default="User Name" />
+                    <div class="fieldcontain ${hasErrors(bean: userInstance, field: 'username', 'error')} ">
+                        <label for="username">
+                            <g:message code="user.username.label" default="User Name" />
                             
                         </label>
-                        <g:textField name="userName" value="${userInstance?.userName}"/>
+                        <g:textField name="username" value="${userInstance?.username}"/>
                     </div>
                     
                     <div class="fieldcontain ${hasErrors(bean: userInstance, field: 'password', 'error')} ">

@@ -90,3 +90,13 @@ log4j = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+
+// Added by the Spring Security Core plugin:
+grails.plugins.springsecurity.userLookup.userDomainClassName = 'leaguemanager.User'
+grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'leaguemanager.UserRole'
+grails.plugins.springsecurity.authority.className = 'leaguemanager.Role'
+grails.plugins.springsecurity.password.algorithm = 'bcrypt'
+grails.plugins.springsecurity.securityConfigType = "Annotation"
+grails.plugins.springsecurity.controllerAnnotations.staticRules = [
+  '/console/**': ['ROLE_ADMIN']
+]
