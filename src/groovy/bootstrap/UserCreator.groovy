@@ -17,7 +17,7 @@ class UserCreator {
 		log.info "Creating default users"
 
 		def users = [
-			createUser ( "Administrator", "admin", "4dm1n2013" )
+			createUser ( "Administrator", "admin", "admin" )
 		]
 
 		users.each { user ->
