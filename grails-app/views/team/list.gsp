@@ -12,7 +12,7 @@
 	
 	<body>
 	
-		<g:render template="/common/header-min" model="['title':'Times']" />
+		<g:render template="/common/header" model="['title':'Time']" />
 		
 		<div class="container">
 			<div class="row">

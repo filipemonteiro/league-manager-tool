@@ -31,16 +31,16 @@
 						<div class="container-fluid">
 							<div class="row-fluid" style="border: 1px solid #E5E5E5">
 								<div class="span5 text-left" style="background-color: blue; border-right: 1px;">
-									HOME
+									${gameInstance.home.name}
 								</div>
 								<div class="span1 text-center" style="background-color: red">
-									2
+									${gameInstance.goalsHome}
 								</div>
 								<div class="span1 text-center" style="background-color: red">
-									1
+									${gameInstance.goalsAway}
 								</div>
 								<div class="span5 text-right" style="background-color: red">
-									AWAY
+									${gameInstance.away.name}
 								</div>
 							</div>
 						</div>

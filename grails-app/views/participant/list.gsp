@@ -12,13 +12,11 @@
 	
 	<body>
 	
-		<g:render template="/common/header" />
+		<g:render template="/common/header" model="['title':'Participante']" />
 		
 		<div class="container">
 			<div class="row">
 	
-				<legend><g:message code="default.list.label" args="[entityName]" /></legend>
-				
 				<g:if test="${flash.message}">
 					<div class="alert">
 						<button type="button" class="close" data-dismiss="alert">&times;</button>

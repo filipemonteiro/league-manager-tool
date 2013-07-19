@@ -9,7 +9,7 @@
 		<r:require modules="bootstrap"/>
 	</head>
 	<body>
-	<g:render template="/common/header-min" model="['title':'Inscrito']" /> 
+	<g:render template="/common/header" model="['title':'Player']" /> 
 	<div class="container">
 			<div class="row">
 		

@@ -8,7 +8,7 @@
 	</head>
 	
 	<body>
-		<g:render template="/common/header" />
+		<g:render template="/common/header" model="[title='Bola pro mato que o jogo é de campeonato!']"/>
 	
 		<div class="container">
 			<div class="row">

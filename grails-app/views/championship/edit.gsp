@@ -10,7 +10,7 @@
 	</head>
 	
 	<body>
-		<g:render template="/common/header-min" model="['title':'Editando']" />
+		<g:render template="/common/header" model="['title':'Editando']" />
 		
 		<div class="container">
 			<div class="row">

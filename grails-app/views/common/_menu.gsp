@@ -1,5 +1,5 @@
 
-		<div class="nav-collapse collapse">
+<div class="nav-collapse collapse">
 			<ul class="nav">
 			    <li class="">
 				  <a href="${createLink(uri: '/')}">Home</a>
@@ -8,10 +8,10 @@
 					<g:link controller="championship">Campeonato</g:link>
 				</li>
 				<li class="">
-					<g:link controller="participant">Participar</g:link>
+					<g:link controller="participant">Participante</g:link>
 				</li>
 				<li class="">
-					<g:link controller="player">Inscrição</g:link>
+					<g:link controller="player">Player</g:link>
 				</li>
 				<li class="">
 					<g:link controller="team">Time</g:link>
@@ -34,9 +34,9 @@
 	        </sec:ifNotLoggedIn>
 	        <sec:ifLoggedIn>
 	        	<div class="navbar-form pull-right">
-	        		<<p class="navbar-text pull-right">
+	        		<p class="navbar-text pull-right">
               			<g:link controller="logout">Logged in as <sec:username /></g:link>
             		</p>
 	        	</div>
 	        </sec:ifLoggedIn>
-        </div>
+</div>

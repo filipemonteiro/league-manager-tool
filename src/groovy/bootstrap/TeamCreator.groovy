@@ -44,7 +44,7 @@ class TeamCreator {
 			new Team(name:"Roma",imagePath:"roma-p.png"),
 			new Team(name:"Schalkae",imagePath:"Schalke_04-p.png"),
 			new Team(name:"Sevilla",imagePath:"sevilla-p.png"),
-			new Team(name:"Sporting",imagePath:"Sporting-p.png"),
+			new Team(name:"Sporting",imagePath:"sporting-p.png"),
 			new Team(name:"Sunderland",imagePath:"sunderland-p.png"),
 			new Team(name:"Tottenham",imagePath:"Tottenham-p.png"),
 			new Team(name:"Valência",imagePath:"Valencia-p.png"),

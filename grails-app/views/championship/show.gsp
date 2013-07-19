@@ -11,7 +11,7 @@
 	</head>
 	
 	<body>
-		<g:render template="/common/header-min" model="['title':'Campeonato']" />
+		<g:render template="/common/header" model="['title':'Campeonato']" />
 		
 		<div class="container">
 			<div class="row">

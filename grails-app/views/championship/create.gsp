@@ -10,13 +10,11 @@
 	</head>
 
 	<body>
-		<g:render template="/common/header-min" model="['title':'Campeonato']" />
+		<g:render template="/common/header" model="['title':'Campeonato']" />
 		
 		<div class="container">
 			<div class="row">
 	
-				
-		
 				<g:if test="${flash.message}">
 					<div class="alert">
 						<button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -45,7 +43,9 @@
 				<div class="form-actions">
 					<g:link class="btn btn-small btn-primary" action="list">Voltar</g:link>
 				</div>
-		<g:render template="/common/footer" />
+				
+				<g:render template="/common/footer" />
+				
 			</div>
 		</div>
 		

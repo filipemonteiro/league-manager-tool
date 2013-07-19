@@ -18,11 +18,3 @@
 	<g:textField name="email" required="" value="${playerInstance?.email}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: playerInstance, field: 'equipe', 'error')} required">
-	<label for="equipe">
-		<g:message code="player.equipe.label" default="Equipe" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="equipe" required="" value="${playerInstance?.equipe}"/>
-</div>
-
