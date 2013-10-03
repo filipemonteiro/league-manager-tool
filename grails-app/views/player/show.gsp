@@ -38,15 +38,6 @@
 					
 				</li>
 				</g:if>
-
-				<g:if test="${playerInstance?.equipe}">
-				<li class="fieldcontain">
-					<span id="name-label" class="property-label"><g:message code="player.equipe.label" default="Equipe" /></span>
-					
-						<span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${playerInstance}" field="equipe"/></span>
-					
-				</li>
-				</g:if>
 			
 			</ol>
 			<g:form>
