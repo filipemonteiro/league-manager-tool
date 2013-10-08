@@ -5,13 +5,13 @@
 	<head>
 		<meta name="layout" content="main"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <parameter name="subtitle" value="Campeonato"/>
 		<g:set var="entityName" value="${message(code: 'championship.label', default: 'Championship')}" />
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 		<r:require modules="bootstrap"/>
 	</head>
 	
 	<body>
-		<g:render template="/common/header" model="['title':'Campeonato']" />
 		
 		<div class="container">
 			<div class="row">
@@ -76,7 +76,6 @@
 					<g:link class="btn btn-small btn-primary" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link>
 					<g:link class="btn btn-small btn-primary" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
 				</div>
-				<g:render template="/common/footer" />
 			</div>
 		</div>
 		

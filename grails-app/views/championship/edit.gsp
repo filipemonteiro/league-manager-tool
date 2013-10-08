@@ -4,13 +4,13 @@
 	<head>
 		<meta name="layout" content="main"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <parameter name="subtitle" value="Editando"/>
 		<g:set var="entityName" value="${message(code: 'championship.label', default: 'Championship')}" />
 		<title><g:message code="default.edit.label" args="[entityName]" /></title>
 		<r:require modules="bootstrap"/>
 	</head>
 	
 	<body>
-		<g:render template="/common/header" model="['title':'Editando']" />
 		
 		<div class="container">
 			<div class="row">
@@ -51,8 +51,5 @@
 				
 			</div>
 		</div>
-		
-		<g:render template="/common/footer" />
-		
 	</body>
 </html>

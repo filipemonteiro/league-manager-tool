@@ -1,3 +1,5 @@
+<g:set var="subtitle" value="${pageProperty(name:'page.subtitle')}"/>
+
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">
@@ -8,5 +10,5 @@
 
 <div class="hero-unit">
   <h1>League Manager</h1>
-  <small class="muted">${title}</small>
+  <small class="muted">${subtitle}</small>
 </div>

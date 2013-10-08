@@ -3,13 +3,13 @@
 <html>
 	<head>
 		<meta name="layout" content="main">
+        <parameter name="subtitle" value="Player"/>
 		<g:set var="entityName" value="${message(code: 'player.label', default: 'Player')}" />
 		<r:require modules="bootstrap"/>
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
 	</head>
 	<body>
 
-	<g:render template="/common/header" model="['title':'Player']" />
 	<div class="container">
 			<div class="row">
 		
@@ -39,7 +39,6 @@
 					<div class="form-actions">
 						<g:link class="btn btn-small btn-primary" action="list">Voltar</g:link>
 					</div>
-					<g:render template="/common/footer" />
 				</div>
 			</div>
 		</div>

@@ -18,7 +18,7 @@
 				</li>
 				<sec:ifAllGranted roles="ROLE_ADMIN">
 					<li class="">
-						<g:link controller="user">Usário</g:link>
+						<g:link controller="user">Usuario</g:link>
 					</li>
 					<li class="">
 						<g:link controller="console">Console</g:link>

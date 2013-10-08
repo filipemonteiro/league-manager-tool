@@ -11,9 +11,6 @@
 	</head>
 	
 	<body>
-	
-		<g:render template="/common/header" />
-		
 		<div class="container">
 			<div class="row">
 		
@@ -58,8 +55,5 @@
 		
 			</div>
 		</div>
-		
-		<g:render template="/common/footer" />
-		
 	</body>
 </html>

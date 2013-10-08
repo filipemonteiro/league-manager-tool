@@ -5,3 +5,5 @@ devDb*
 .classpath
 .settings/
 *.log
+*.iml
+.idea/

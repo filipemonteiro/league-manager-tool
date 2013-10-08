@@ -1,4 +1,3 @@
-
 <%@ page import="leaguemanager.Game" %>
 <!DOCTYPE html>
 <html>
@@ -11,8 +10,6 @@
 	</head>
 	
 	<body>
-		<g:render template="/common/header" />
-		
 		<div class="container">
 			<div class="row">
 			
@@ -31,16 +28,16 @@
 						<div class="container-fluid">
 							<div class="row-fluid" style="border: 1px solid #E5E5E5">
 								<div class="span5 text-left" style="background-color: blue; border-right: 1px;">
-									${gameInstance.home.name}
+									${gameInstance.home.player.name}
 								</div>
 								<div class="span1 text-center" style="background-color: red">
-									${gameInstance.goalsHome}
+								    <g:textField name="goalsHome" value="${gameInstance.goalsHome}"/>
 								</div>
 								<div class="span1 text-center" style="background-color: red">
-									${gameInstance.goalsAway}
+                                    <g:textField name="goalsHome" value="${gameInstance.goalsAway}"/>
 								</div>
 								<div class="span5 text-right" style="background-color: red">
-									${gameInstance.away.name}
+									${gameInstance.away.player.name}
 								</div>
 							</div>
 						</div>
@@ -52,7 +49,5 @@
 				</div>
 			</div>
 		</div>
-		
-		<g:render template="/common/footer" />
 	</body>
 </html>

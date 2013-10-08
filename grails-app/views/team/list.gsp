@@ -5,20 +5,15 @@
 	<head>
 		<meta name="layout" content="main"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <parameter name="subtitle" value="Time"/>
 		<g:set var="entityName" value="${message(code: 'team.label', default: 'Team')}" />
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 		<r:require modules="bootstrap"/>
 	</head>
 	
 	<body>
-	
-		<g:render template="/common/header" model="['title':'Time']" />
-		
 		<div class="container">
 			<div class="row">
-		
-				
-				
 				<g:if test="${flash.message}">
 					<div class="alert">
 						<button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -49,11 +44,7 @@
 				<div class="pagination">
 					<g:paginate total="${teamInstanceTotal}" />
 				</div>
-						<g:render template="/common/footer" />
 			</div>
 		</div>
-		
-
-		
 	</body>
 </html>
